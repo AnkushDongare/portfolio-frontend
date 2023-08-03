@@ -7,279 +7,23 @@ const DeclaredResult = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    let dataUrl;
+    fetchData();
+  }, []);
 
-    if (
-      event === "open-sight" &&
-      region === "urban" &&
-      gender === "male" &&
-      age === "u14"
-    ) {
-      dataUrl = "http://localhost:6000/shooting-results/open-sight/urban/male/u14";
-    } else if (
-      event === "open-sight" &&
-      region === "urban" &&
-      gender === "male" &&
-      ageGroup === "u17"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data2";
-    } else if (
-      event === "open-sight" &&
-      region === "urban" &&
-      gender === "male" &&
-      ageGroup === "u19"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data3";
-    } else if (
-      event === "open-sight" &&
-      region === "urban" &&
-      gender === "female" &&
-      ageGroup === "u14"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data4";
-    } else if (
-      event === "open-sight" &&
-      region === "urban" &&
-      gender === "female" &&
-      ageGroup === "u17"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data5";
-    } else if (
-      event === "open-sight" &&
-      region === "urban" &&
-      gender === "female" &&
-      ageGroup === "u19"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data6";
-    } else if (
-      event === "open-sight" &&
-      region === "rural" &&
-      gender === "male" &&
-      ageGroup === "u14"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data7";
-    } else if (
-      event === "open-sight" &&
-      region === "rural" &&
-      gender === "male" &&
-      ageGroup === "u17"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data8";
-    } else if (
-      event === "open-sight" &&
-      region === "rural" &&
-      gender === "male" &&
-      ageGroup === "u19"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data9";
-    } else if (
-      event === "open-sight" &&
-      region === "rural" &&
-      gender === "female" &&
-      ageGroup === "u14"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data10";
-    } else if (
-      event === "open-sight" &&
-      region === "rural" &&
-      gender === "female" &&
-      ageGroup === "u17"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data11";
-    } else if (
-      event === "open-sight" &&
-      region === "rural" &&
-      gender === "female" &&
-      ageGroup === "u19"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data12";
-    } else if (
-      event === "peep-sight" &&
-      region === "urban" &&
-      gender === "male" &&
-      ageGroup === "u14"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data13";
-    } else if (
-      event === "peep-sight" &&
-      region === "urban" &&
-      gender === "male" &&
-      ageGroup === "u17"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data14";
-    } else if (
-      event === "peep-sight" &&
-      region === "urban" &&
-      gender === "male" &&
-      ageGroup === "u19"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data15";
-    } else if (
-      event === "peep-sight" &&
-      region === "urban" &&
-      gender === "female" &&
-      ageGroup === "u14"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data16";
-    } else if (
-      event === "peep-sight" &&
-      region === "urban" &&
-      gender === "female" &&
-      ageGroup === "u17"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data17";
-    } else if (
-      event === "peep-sight" &&
-      region === "urban" &&
-      gender === "female" &&
-      ageGroup === "u19"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data18";
-    } else if (
-      event === "peep-sight" &&
-      region === "rural" &&
-      gender === "male" &&
-      ageGroup === "u14"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data19";
-    } else if (
-      event === "peep-sight" &&
-      region === "rural" &&
-      gender === "male" &&
-      ageGroup === "u17"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data20";
-    } else if (
-      event === "peep-sight" &&
-      region === "rural" &&
-      gender === "male" &&
-      ageGroup === "u19"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data21";
-    } else if (
-      event === "peep-sight" &&
-      region === "rural" &&
-      gender === "female" &&
-      ageGroup === "u14"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data22";
-    } else if (
-      event === "peep-sight" &&
-      region === "rural" &&
-      gender === "female" &&
-      ageGroup === "u17"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data23";
-    } else if (
-      event === "peep-sight" &&
-      region === "rural" &&
-      gender === "female" &&
-      ageGroup === "u19"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data24";
-    } else if (
-      event === "pistol" &&
-      region === "urban" &&
-      gender === "male" &&
-      ageGroup === "u14"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data25";
-    } else if (
-      event === "pistol" &&
-      region === "urban" &&
-      gender === "male" &&
-      ageGroup === "u17"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data26";
-    } else if (
-      event === "pistol" &&
-      region === "urban" &&
-      gender === "male" &&
-      ageGroup === "u19"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data27";
-    } else if (
-      event === "pistol" &&
-      region === "urban" &&
-      gender === "female" &&
-      ageGroup === "u14"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data28";
-    } else if (
-      event === "pistol" &&
-      region === "urban" &&
-      gender === "female" &&
-      ageGroup === "u17"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data29";
-    } else if (
-      event === "pistol" &&
-      region === "urban" &&
-      gender === "female" &&
-      ageGroup === "u19"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data30";
-    } else if (
-      event === "pistol" &&
-      region === "rural" &&
-      gender === "male" &&
-      ageGroup === "u14"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data31";
-    } else if (
-      event === "pistol" &&
-      region === "rural" &&
-      gender === "male" &&
-      ageGroup === "u17"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data32";
-    } else if (
-      event === "pistol" &&
-      region === "rural" &&
-      gender === "male" &&
-      ageGroup === "u19"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data33";
-    } else if (
-      event === "pistol" &&
-      region === "rural" &&
-      gender === "female" &&
-      ageGroup === "u14"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data34";
-    } else if (
-      event === "pistol" &&
-      region === "rural" &&
-      gender === "female" &&
-      ageGroup === "u17"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data35";
-    } else if (
-      event === "pistol" &&
-      region === "rural" &&
-      gender === "female" &&
-      ageGroup === "u19"
-    ) {
-      dataUrl = "https://shooting-api.onrender.com/data36";
-    } else {
-      // Handle invalid combination of region, gender, and ageGroup
-      return;
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:3001/api/data');
+      const jsonData = await response.json();
+      // Sort the data in ascending order based on the "total" score
+      const filteredData = jsonData.filter(
+        (shooter) => shooter.Age == age && shooter.Region == region && shooter.Event == event && shooter.Age == age
+      );
+      filteredData.sort((a, b) => b.Total - a.Total);
+      setData(filteredData);
+    } catch (error) {
+      console.error('Error fetching data:', error);
     }
-
-    fetch(dataUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => setData(data))
-      .catch((error) => {
-        // Handle the error here (e.g., display an error message, log the error, etc.)
-        console.error("Error fetching data:", error);
-      });
-  }, [event, region, gender, ageGroup]);
-
+  };
   return (
     <section className="text-gray-700 py-20 px-8">
       <div className="container mx-auto text-center">
@@ -342,6 +86,7 @@ const DeclaredResult = () => {
                   Rank,
                   Rem,
                 } = shooter;
+                const score = Series[0] + Series[1] + Series[2] + Series[3] - Penalty;
                 return (
                   <tr key={index} className="bg-gray-50">
                     <th className="px-4 py-2 border">{SrNo}</th>
@@ -354,11 +99,11 @@ const DeclaredResult = () => {
                     <th className="px-4 py-2 border">{Series[3]}</th>
                     <th className="px-4 py-2 border">{Penalty}</th>
                     <th className="px-4 py-2 border">
-                      {Series[0] + Series[1] + Series[2] + Series[3] - Penalty}
+                      {score == Total ? Total : 'check'}
                     </th>
                     <th className="px-4 py-2 border">{Rank ? Rank : null}</th>
                     <th className="px-4 py-2 border">
-                      {Rem === "c" ? "c" : null}
+                      {Rem === "C" ? "C" : null}
                     </th>
                   </tr>
                 );
