@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import resume from "../assets/resume.pdf";
+import {FaGun} from 'react-icons/fa6'
 import Image from "../../src/assets/Image.jpeg"; // Import the image file
 
 export default function HomeHero() {
@@ -27,7 +28,7 @@ export default function HomeHero() {
             </div>
           </div>
           <div className="flex justify-center items-center pt-5">
-            <a
+            {/* <a
               href={resume}
               download="Resume"
               target="_blank"
@@ -35,7 +36,13 @@ export default function HomeHero() {
               className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-indigo-600 focus-visible:outline-offset-2 focus-visible:ring focus-visible:ring-indigo-300"
             >
               Download Resume
-            </a>
+            </a> */}
+            <Link
+              to="/projects"
+              className="rounded-md bg-indigo-600 px-3.5 flex justify-center items-center py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-indigo-600 focus-visible:outline-offset-2 focus-visible:ring focus-visible:ring-indigo-300"
+            >
+              <span className="px-2">View Shooting Results</span><FaGun size={25} />
+            </Link>
             <Link
               to="/projects"
               className="text-sm font-semibold leading-6 text-gray-900 px-6"
