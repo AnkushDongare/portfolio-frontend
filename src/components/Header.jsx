@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { navigation } from "../data/data";
-
+import headerIcon from '../assets/icons/icon-384x384.png'
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -18,7 +18,7 @@ const Header = () => {
             <span className="sr-only">Ankush Dongre</span>
             <img
               className="h-10 w-auto"
-              src="/src/assets/icons/icon-384x384.png"
+              src={headerIcon}
               alt=""
             />
           </Link>
