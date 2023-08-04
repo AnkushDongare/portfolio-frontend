@@ -89,7 +89,7 @@ const DeclaredResult = () => {
                 const score = Series[0] + Series[1] + Series[2] + Series[3] - Penalty;
                 return (
                   <tr key={index} className="bg-gray-50">
-                    <th className="px-4 py-2 border">{SrNo}</th>
+                    <th className="px-4 py-2 border">{index+1}</th>
                     <th className="px-4 py-2 border">{CompNo}</th>
                     <th className="px-4 py-2 border">{ShooterName}</th>
                     <th className="px-4 py-2 border">{School}</th>
@@ -101,9 +101,9 @@ const DeclaredResult = () => {
                     <th className="px-4 py-2 border">
                       {score == Total ? Total : 'check'}
                     </th>
-                    <th className="px-4 py-2 border">{Rank ? Rank : null}</th>
+                    <th className="px-4 py-2 border">{index < 3 ? index+1 : null}</th>
                     <th className="px-4 py-2 border">
-                      {Rem === "C" ? "C" : null}
+                    {index < 3 ? 'C' : null}
                     </th>
                   </tr>
                 );

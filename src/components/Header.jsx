@@ -6,7 +6,7 @@ import { navigation } from "../data/data";
 import headerIcon from '../assets/icons/icon-384x384.png'
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <nav

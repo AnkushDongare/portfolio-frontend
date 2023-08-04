@@ -151,8 +151,8 @@ const ShootingResultsMainPage = () => {
 
         {/* Link to view results */}
         <Link
-          to={`/shooting-results/${event}/${region}/${gender}/${ageGroup}`}
-          // to='/shooting-results/result-not-declared'
+          // to={`/shooting-results/${event}/${region}/${gender}/${ageGroup}`}
+          to='/shooting-results/result-not-declared'
           className="bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white hover:text-gray-800 flex justify-center items-center text-center p-4 rounded-lg transition-all duration-300"
         >
           {`See ${
