@@ -26,7 +26,7 @@ const DeclaredResult = () => {
   };
   return (
     <section className="text-gray-700 py-20 px-8">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto my-auto text-center">
         <h1 className="text-xl md:text-2xl lg:text:3xl 2xl:text-3xl font-bold mb-4 text-gray-600">
           Inter School Shooting Competition
         </h1>
@@ -42,7 +42,7 @@ const DeclaredResult = () => {
       </div>
 
       <div className="container">
-        <div className="border border-collapse rounded-md overflow-x-auto">
+        <div className="border border-collapse rounded-md overflow-x-auto overflow-y-auto">
           <table className="table-auto w-full text-[.2em] md:text-sm lg:text-sm xl:text-md">
             <thead>
               <tr className="bg-gray-100">
