@@ -38,8 +38,8 @@ export default function HomeHero() {
               Download Resume
             </a> */}
             <Link
-              // to="/shooting-results"
-              to="/shooting-results/result-not-declared"
+              to="/shooting-results"
+              // to="/shooting-results/result-not-declared"
               className="rounded-md bg-indigo-600 px-3.5 flex justify-center items-center py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-indigo-600 focus-visible:outline-offset-2 focus-visible:ring focus-visible:ring-indigo-300"
             >
               <span className="px-2">View Shooting Results</span><FaGun size={25} />

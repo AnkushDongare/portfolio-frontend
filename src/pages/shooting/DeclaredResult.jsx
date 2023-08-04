@@ -12,16 +12,21 @@ const DeclaredResult = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://13.233.212.77:3001/api/data');
+      const response = await fetch("http://13.233.212.77:3001/api/data");
       const jsonData = await response.json();
       // Sort the data in ascending order based on the "total" score
       const filteredData = jsonData.filter(
-        (shooter) => shooter.Age == age && shooter.Region == region && shooter.Event == event && shooter.Age == age
+        (shooter) =>
+          shooter.Age == age &&
+          shooter.Region == region &&
+          shooter.Event == event &&
+          shooter.Gender == gender
       );
       filteredData.sort((a, b) => b.Total - a.Total);
+      console.log(filteredData);
       setData(filteredData);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
     }
   };
   return (
@@ -77,33 +82,52 @@ const DeclaredResult = () => {
               {data.map((shooter, index) => {
                 const {
                   SrNo,
+                  Series1,
+                  Series2,
+                  Series3,
+                  Series4,
                   CompNo,
                   ShooterName,
                   School,
-                  Series,
                   Penalty,
                   Total,
-                  Rank,
-                  Rem,
                 } = shooter;
-                const score = Series[0] + Series[1] + Series[2] + Series[3] - Penalty;
+                const score = Series1 + Series2 + Series3 + Series4 - Penalty;
                 return (
-                  <tr key={index} className="bg-gray-50">
-                    <th className="px-4 py-2 border">{index+1}</th>
-                    <th className="px-4 py-2 border">{CompNo}</th>
-                    <th className="px-4 py-2 border">{ShooterName}</th>
-                    <th className="px-4 py-2 border">{School}</th>
-                    <th className="px-4 py-2 border">{Series[0]}</th>
-                    <th className="px-4 py-2 border">{Series[1]}</th>
-                    <th className="px-4 py-2 border">{Series[2]}</th>
-                    <th className="px-4 py-2 border">{Series[3]}</th>
-                    <th className="px-4 py-2 border">{Penalty}</th>
+                  <tr key={index} className={index<3 ? "bg-green-200": "bg-gray-50"}>
+                    <th className="px-4 py-2 border">{index + 1}</th>
                     <th className="px-4 py-2 border">
-                      {score == Total ? Total : 'check'}
+                      {CompNo}
                     </th>
-                    <th className="px-4 py-2 border">{index < 3 ? index+1 : null}</th>
                     <th className="px-4 py-2 border">
-                    {index < 3 ? 'C' : null}
+                      {ShooterName}
+                    </th>
+                    <th className="px-4 py-2 border">
+                      {School ? School : null}
+                    </th>
+                    <th className="px-4 py-2 border">
+                      {Series1 ? Series1 : null}
+                    </th>
+                    <th className="px-4 py-2 border">
+                      {Series2 ? Series2 : null}
+                    </th>
+                    <th className="px-4 py-2 border">
+                      {Series3 ? Series3 : null}
+                    </th>
+                    <th className="px-4 py-2 border">
+                      {Series4 ? Series4 : null}
+                    </th>
+                    <th className="px-4 py-2 border">
+                      {Penalty ? Penalty : null}
+                    </th>
+                    <th className="px-4 py-2 border">
+                      {score == Total ? Total : "check"}
+                    </th>
+                    <th className="px-4 py-2 border">
+                      {index < 3 ? index + 1 : null}
+                    </th>
+                    <th className="px-4 py-2 border">
+                      {SrNo > 63 ? "ABS" : "C"}
                     </th>
                   </tr>
                 );
