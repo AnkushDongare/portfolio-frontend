@@ -12,7 +12,7 @@ const DeclaredResult = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/data');
+      const response = await fetch('http://13.233.212.77:3001/api/data');
       const jsonData = await response.json();
       // Sort the data in ascending order based on the "total" score
       const filteredData = jsonData.filter(
